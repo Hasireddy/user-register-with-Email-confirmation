@@ -6,7 +6,7 @@ from .forms import UserRegisterForm
 
 def user_register(request):
     if request.method == "POST":
-        form = UserRegisterForm(request.POST)
+        form = UserRegisterForm(request.POST,request.FILES)
         if form.is_valid():
             form.save()
             return HttpResponse("user registered")
