@@ -2,6 +2,8 @@ from django.db import models
 
 from django.core import validators
 
+from .customFields.file_upload import LicenseFileField
+
 # Create your models here.
 
 
@@ -11,8 +13,8 @@ class User(models.Model):
     username = models.CharField(max_length=100)
     email = models.EmailField(unique=True,validators= [validators.EmailValidator(message="Invalid Email")])
     password = models.CharField(max_length=100)
-    file = models.FileField(upload_to = "documents/")
     is_active = models.BooleanField(default=False)
+    license = LicenseFileField()
     
     
     def __str__(self):
