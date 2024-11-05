@@ -12,7 +12,7 @@ def user_register(request):
             return HttpResponse("user registered")
     else:       
         form = UserRegisterForm()
-    return render(request,"register.html",{"register_form":form})
+    return render(request,"EmailApp/register.html",{"register_form":form})
         
 
 
