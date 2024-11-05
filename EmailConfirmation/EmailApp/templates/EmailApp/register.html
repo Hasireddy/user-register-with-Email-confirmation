@@ -1,0 +1,12 @@
+{% include 'EmailApp/base.html'%}
+
+{% load static %}
+{% block content %}
+    <div>
+       <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form}}
+       </form>
+    </div>
+   
+{% endblock %}
