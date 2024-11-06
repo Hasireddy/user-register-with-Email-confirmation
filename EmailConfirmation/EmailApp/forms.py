@@ -2,15 +2,15 @@ from django import forms
 
 from .models import User
 
+
 class UserRegisterForm(forms.ModelForm):
     password2 = forms.CharField(
-         required=True,
+        required=True,
         max_length=200,
         label="Confirm Password",
         widget=forms.PasswordInput(attrs={"placeholder": "Confirm your password"}),
-        
     )
-    
+
     class Meta:
         model = User
         verbose_name = "user"
@@ -34,6 +34,7 @@ class UserRegisterForm(forms.ModelForm):
             "last_name": "Last name",
             "username": "Username",
             "email": "Email",
+            "license": "License",
             "password": "Password",
             "password2": "Confirm Password",
         }
@@ -45,4 +46,3 @@ class UserRegisterForm(forms.ModelForm):
         if password1 and password2 and password1 != password2:
             raise forms.ValidationError("Passwords didn't match")
         return cleaned_data
-        
