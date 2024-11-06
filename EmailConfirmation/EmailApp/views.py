@@ -10,6 +10,8 @@ from .forms import UserRegisterForm
 
 from .models import User
 
+from .utils import send_confirmation_mail
+
 # Create your views here.
 
 # def user_register(request):
@@ -31,6 +33,7 @@ def user_register(request):
             # Hashing Password before saving it to the database
             user.password = make_password(user.password)
             user.save()
+            send_confirmation_mail(request, user)
             return HttpResponse("success")
 
     else:
