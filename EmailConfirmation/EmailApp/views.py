@@ -55,8 +55,7 @@ def confirm_email(request, user_id, token):
     if user is not None and default_token_generator.check_token(user, token):
         user.is_active = True
         user.save()
-        messages.success(request, "Your email is verified!")
-        return redirect("digiActApp:login")
+        return redirect("EmailApp:register")
     else:
         messages.error(request, "Invalid link1")
-        return redirect("digiActApp:register")
+        return redirect("EmailApp:register")

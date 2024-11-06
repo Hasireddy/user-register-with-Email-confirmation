@@ -19,7 +19,7 @@ def send_confirmation_mail(request, user):
     )
     # The HTML version is rendered using render_to_string
     html_message = render_to_string(
-        "emailTemplates/email_confirm.html",
+        "EmailApp/email_confirm.html",
         {
             "user": user,
             "confirmation_link": confirmation_link,

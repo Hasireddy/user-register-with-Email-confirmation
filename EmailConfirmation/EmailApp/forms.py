@@ -14,7 +14,7 @@ class UserRegisterForm(forms.ModelForm):
     class Meta:
         model = User
         verbose_name = "user"
-        exclude = ["is_active"]
+        exclude = ["is_active", "last_login"]
         widgets = {
             "first_name": forms.TextInput(
                 attrs={"placeholder": "Enter your First name"}
