@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Email template</title>
+        <style>
+            * {
+                box-sizing: border-box;
+                text-align: left;
+                font-family:Poppins,Helvetica,Arial,sans-serif;
+              }
+            
+              body{
+                background-color:#008686; 
+                width:100%;
+                height:auto;
+                margin:auto;
+              }
+            
+              .user-text{
+                padding: 20px 0;
+              }
+            
+              h2{
+                margin:0; 
+                font-size:28px; 
+                font-weight:550; 
+                letter-spacing:normal; 
+                line-height: 30px;
+              }
+            
+              .content-main {
+                background-color: #ffffff;
+                border: 1px solid #e5e5e5;
+                width: 100%;
+                max-width:900px;
+                position:absolute;
+                top:0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin:0 auto;
+                padding:40px;
+                overflow: auto;    
+              }
+            
+            
+              p {
+                font-size:18px;
+                font-weight:520; 
+                color: #1a1818;
+                line-height:100%;
+              }
+            
+            
+              .btn-mail{
+                background:#008686; 
+                border: none;
+                font-weight:550;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                text-decoration: none;
+                padding:20px 25px;
+                margin-top:20px;
+                margin-bottom:18px;
+                display: inline-block;
+                border-radius:10px;
+                color:white;
+              }
+            
+              .btn-mail:hover{
+                background:#87A2FF;
+                color:black;
+                transition:1sec;
+            
+              }
+            
+            
+              hr{
+                color:#E0E0E0;
+                align-items: center;
+                width:100%;
+                size: 1px;
+              }
+            
+              .digi-logo{
+                width:100%;
+                max-width:120px;
+                height: auto;
+                display: block;  
+                margin: 0 auto; 
+                margin-bottom: 5px;
+                text-align:center;
+              }
+            
+              .email-text{
+                padding: 5px 0;
+              }
+    
+              .confirm_link{
+                margin-bottom:25px;
+                font-size:16px;
+              }
+            
+            
+            @media screen and (max-width: 610px) and (min-width: 428px) {
+            
+              .content-main {
+                width: 100%;
+                min-height:800px;
+                
+              }   
+            
+              .digi-logo {
+                width: 120px; 
+                height: auto; 
+                display: block; 
+                margin: 0 auto;
+              }
+            
+              h2 {
+                  font-size: 30px; 
+                  line-height: 35px;
+                  padding-bottom: 10px;
+              }
+              p {
+                  font-size: 18px;
+              } 
+            }
+            
+            @media screen and (max-width: 480px) and (min-width: 320px) {
+              
+               
+              h2{
+                  font-size: 18px; 
+                  line-height: 25px;
+                  padding-bottom: 3px;
+              }
+              p {
+                  font-size: 14px;
+              } 
+              .btn-mail {
+                  padding: 10px 15px;
+                  margin: 20px 0 30px;
+              }
+            
+              .digi-logo {
+                width: 120px; 
+                height: auto; 
+                display: block; 
+                margin: 0 auto;
+            }
+            }
+            
+            @media screen and (max-width: 420px) {
+              h2 {
+                  font-size: 25px; 
+                  line-height: 35px;
+                  padding-bottom: 3px;
+              }
+              p {
+                  font-size: 16px;
+              } 
+            
+              .digi-logo {
+                width: 120px; 
+                height: auto; 
+                display: block; 
+                margin: 0 auto;
+            }
+            }
+            
+            
+            @media screen and (max-width:336px) and (min-width: 264px) {
+            
+              .content-main {
+                width: 100%;
+                min-height:800px;
+                
+              }  
+            
+              .digi-logo {
+                width: 120px; 
+                height: auto; 
+                display: block; 
+                margin: 0 auto;
+            }
+            
+              h2 {
+                  font-size: 23px; 
+                  line-height: 35px;
+                  padding-bottom: 3px;
+              }
+              p {
+                  font-size: 16px;
+              } 
+            
+              .btn-mail {
+                padding: 10px 15px;
+                margin: 20px 0 30px;
+            }
+            }
+            
+            
+            
+            @media screen and (max-width: 260px) and (min-width:210px) {
+            
+              .content-main {
+                width: 100%;
+                min-height:900px;
+                
+              }  
+            
+              .digi-logo {
+                width: 120px; 
+                height: auto; 
+                display: block; 
+                margin: 0 auto;
+            }
+            
+              h1 {
+                  font-size: 18px; 
+                  line-height: 35px;
+                  padding-bottom: 3px;
+              }
+              p {
+                  font-size: 16px;
+              } 
+            
+              .btn-mail {
+                padding: 10px 10px;
+                margin: 20px 0 30px;
+                font-size: 14px;
+            }
+            }
+        </style>
+
+    </head>
+    <body>
+       <div class="content-main"> 
+            <div class="logo">
+                <a href="http://127.0.0.1:8000/digiAbfall/">
+                    <img src="https://a82f63f962.imgdist.com/public/users/BeeFree/beefree-753d99c3-0027-4615-b7c6-15006cddc0f5/logo.png" alt="digi logo" class="digi-logo">
+                </a>
+             </div>
+            <hr/>
+            <div class="user-text">
+                <h2>Hallo {{user.username}},</h2>
+            </div>
+            <p>Thank you for registering on our platform.</p>
+            <p>To complete your registration and gain full access to the Service, please confirm your email address.</p>
+            <div>
+                <a href="{{ confirmation_link }}">
+                    <button class="btn-mail">Confirm Email-address</button>
+                </a>
+            </div>
+            <div class="confirm_link">
+                {{ confirmation_link }}
+            </div>
+            <hr/>
+            <div class="email-text">
+                <p class="text-end">If you have not registered, please ignore this email.</p>
+            </div>
+       </div>
+    </body>
+</html>
