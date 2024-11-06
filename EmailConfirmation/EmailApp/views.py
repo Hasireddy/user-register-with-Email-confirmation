@@ -53,6 +53,7 @@ def confirm_email(request, user_id, token):
         user = None
     # checks if the provided token is valid for the user. If the token matches, it indicates that the link is valid.
     if user is not None and default_token_generator.check_token(user, token):
+        # Verify the user account when he clicks on the verification link and activate it.
         user.is_active = True
         user.save()
         return redirect("EmailApp:register")
